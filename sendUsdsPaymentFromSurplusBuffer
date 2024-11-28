@@ -1,0 +1,9 @@
+> +    function _transferSky(address usr, uint256 wad) internal {
++        // Note: Enforce exact conversion to avoid rounding errors
++        require(wad % MKR_SKY_RATE == 0, "transferSky/non-exact-conversion");
+
++    > +    function _transferUsds(address usr, uint256 wad) internal {
++        // Note: Enforce whole units to avoid rounding errors
++        require(wad % WAD == 0, "transferUsds/non-integer-wad");
+
+l
